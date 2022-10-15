@@ -1,27 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Hello from './components/examples/hello/Hello';
-import HelloClass from './components/examples/hello/HelloClass';
-import HelloState from './components/examples/hello/HelloState';
-import HelloMultiple from './components/examples/hello/HelloMultiple';
-import Clock from './components/examples/withHooks/Clock';
-import LoadData from './components/examples/withHooks/LoadData';
-import DisplayMessage from './components/longcat/messages';
+import FillBlanks from './components/FillBlanks';
+import Mask from './data_models/Mask';
+import ConstructTemplate from './data_models/Template';
 
 function App() {
+  let template = ConstructTemplate("[NOUN] next to [PLACE]");
+  (template.fragments[0] as Mask).setOptions(["horse", "apple"]);
+  (template.fragments[0] as Mask).setActual("horse");
+  (template.fragments[3] as Mask).setOptions(["field", "kitchen"]);
+  (template.fragments[3] as Mask).setActual("field");
+
   return (
     <div className='container'>
-      <Hello name="Jakeyboi" enthusiasmLevel={3} />
-      <HelloClass name='tester' enthusiasmLevel={12} />
-      <HelloState name="jimothy" enthusiasm={5} />
-      <HelloMultiple people={[{id: 0, name: "John"}, {id: 1, name: "Jim"}]} />
-      <hr />
-      <Clock/>
-      <hr />
-      <LoadData />
-      <hr />
-      <DisplayMessage creepinessLevel={10} difficultyLevel={100} correct={true} />
+      <FillBlanks template={template} />
     </div>
   );
 }
