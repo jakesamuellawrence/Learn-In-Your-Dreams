@@ -8,10 +8,12 @@ import HelloMultiple from './components/examples/hello/HelloMultiple';
 import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
 import DisplayMessage from './components/longcat/messages';
+import backgroundImage from "./websiteImage.png"
 
 function App() {
   return (
     <div className='container'>
+      <img src={backgroundImage} alt="WHY U NO WORK"></img>
       <Hello name="Jakeyboi" enthusiasmLevel={3} />
       <HelloClass name='tester' enthusiasmLevel={12} />
       <HelloState name="jimothy" enthusiasm={5} />
