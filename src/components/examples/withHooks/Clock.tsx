@@ -10,11 +10,12 @@ function Clock() {
 
     const handleClick = () => {
         // must use the setter function returned by useState, don't update `time` directly
+        // if you don't use `setTime`, the component will not be re-rendered
         setTime(addMinutes(time, 10));
     }
 
     const handleClickAlt = () => {
-        // give setTime a function that takes the previous state and returns the new one
+        // can also give setTime a function that takes the previous state and returns the new one
         // preferred if making many changes to the same state in a row based on the previous value each time,
         // as you can't guarantee that `time` will have been updated until the component re-renders
         setTime((previous) => addMinutes(previous, 10));

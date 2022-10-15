@@ -5,6 +5,7 @@ export interface Props {
     enthusiasmLevel?: number;
 }
 
+// class-style component. function-components are preferable when using hooks (see withHooks folder)
 class HelloClass extends React.Component<Props> {
     render() {
         const {name, enthusiasmLevel = 1} = this.props;
