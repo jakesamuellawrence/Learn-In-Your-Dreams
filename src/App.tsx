@@ -7,6 +7,7 @@ import HelloState from './components/examples/hello/HelloState';
 import HelloMultiple from './components/examples/hello/HelloMultiple';
 import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
+import DisplayMessage from './components/longcat/messages';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Clock/>
       <hr />
       <LoadData />
+      <hr />
+      <DisplayMessage creepinessLevel={10} difficultyLevel={100} correct={true} />
     </div>
   );
 }
