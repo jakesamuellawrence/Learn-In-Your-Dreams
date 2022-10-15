@@ -1,5 +1,6 @@
 import './App.css';
 import FillBlanks from './components/FillBlanks';
+import DisplayMessage from './components/longcat/messages';
 import TestPrompts from './components/TestPrompts';
 import Mask from './data_models/Mask';
 import ConstructTemplate from './data_models/Template';
@@ -14,7 +15,10 @@ function App() {
   return (
     <div className='container'>
        <FillBlanks template={template} />
+       <hr />
        <TestPrompts/>
+       <hr />
+       <DisplayMessage difficultyLevel={100} creepinessLevel={100} correct={false} />
     </div>
   );
 }

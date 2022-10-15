@@ -1,10 +1,10 @@
 import { fragment } from "./Template";
 
 export enum MaskType {
-    NOUN, 
-    ADJECTIVE, 
+    NOUN,
+    ADJECTIVE,
     EMOTION,
     PLACE,
-    OBJECT,
     ANIMAL,
+    OBJECT,
 }

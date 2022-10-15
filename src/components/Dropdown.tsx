@@ -14,8 +14,6 @@ function Dropdown({mask, reportState, shouldShow}: Props) {
 
     reportState(value);
 
-    console.log(shouldShow);
-
     return(
         <span>
             <select onChange={(e) => {
