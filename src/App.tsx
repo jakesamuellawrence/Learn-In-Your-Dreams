@@ -9,13 +9,19 @@ import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
 import Template from './data_models/Template';
 import FillBlanks from './components/FillBlanks';
+import TestPrompts from './components/TestPrompts';
+
 
 function App() {
   let template = Template("[NOUN] standing in a [PLACE]");
+
   return (
+    // <div className='container'>
+    //   <FillBlanks template={template} />
+    // </div>
     <div className='container'>
-      <FillBlanks template={template} />
-    </div>
+    <TestPrompts/>
+   </div>
   );
 }
 
