@@ -1,8 +1,6 @@
 import Mask from "./Mask";
 import { MaskType } from "./MaskType";
 
-// use `[MASKED]` for masked words
-
 export type fragment = string | Mask;
 
 export interface Template {
@@ -18,7 +16,7 @@ function ConstructTemplate(toParse: string) {
             return new Mask(type);
         } else return word
     });
-
+    
     return {fragments: fragments}
 }
 

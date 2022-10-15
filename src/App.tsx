@@ -1,5 +1,6 @@
 import './App.css';
 import FillBlanks from './components/FillBlanks';
+import TestPrompts from './components/TestPrompts';
 import Mask from './data_models/Mask';
 import ConstructTemplate from './data_models/Template';
 
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div className='container'>
-      <FillBlanks template={template} />
+       <FillBlanks template={template} />
+       <TestPrompts/>
     </div>
   );
 }
