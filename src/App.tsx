@@ -1,17 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Hello from './components/examples/hello/Hello';
-import HelloClass from './components/examples/hello/HelloClass';
-import HelloState from './components/examples/hello/HelloState';
-import HelloMultiple from './components/examples/hello/HelloMultiple';
-import Clock from './components/examples/withHooks/Clock';
-import LoadData from './components/examples/withHooks/LoadData';
-import Template from './data_models/Template';
 import FillBlanks from './components/FillBlanks';
+import Mask from './data_models/Mask';
+import ConstructTemplate from './data_models/Template';
 
 function App() {
-  let template = Template("[NOUN] standing in a [PLACE]");
+  let template = ConstructTemplate("[NOUN] next to [PLACE]");
+  (template.fragments[0] as Mask).setOptions(["horse", "apple"]);
+  (template.fragments[0] as Mask).setActual("horse");
+  (template.fragments[3] as Mask).setOptions(["field", "kitchen"]);
+  (template.fragments[3] as Mask).setActual("field");
+
   return (
     <div className='container'>
       <FillBlanks template={template} />
