@@ -17,7 +17,6 @@ promptsByDifficulty.set(1,["[OBJECT] in [PLACE]", "A big [OBJECT]", "A small [OB
 promptsByDifficulty.set(2,["A [EMOTION] [ANIMAL]", "A person [VERB]" ]);
 promptsByDifficulty.set(3,["[OBJECT] standing in [PLACE]"]);
 
-
 let listOfObjects: string[] =
 ["nose",
 "head",
@@ -70,23 +69,35 @@ export function createImageScentence(difficultyLevel: number) {
 
     if (!prompts) throw new Error("prompt-list was undefined or null");
 
-    let imageSentence = "";
     let promptChoice: number = Math.floor(Math.random()* prompts.length);
     let prompt = prompts[promptChoice];
 
     prompt.fragments.forEach((fragment) => {
         if (fragment instanceof Mask && fragment.maskType) {
             let wordList = listMaskConnection.get(fragment.maskType);
-            let randomWord = wordList != undefined 
-                                ? wordList[Math.floor(Math.random()* wordList.length)] 
-                                : "undefined";
-            imageSentence += randomWord + " ";
-        } else {
-            imageSentence += fragment as string + " ";
+            let wordListCopy = [...wordList as string[]];
+            shuffleList(wordListCopy);
+            let actual = wordListCopy.pop();
+            if (!actual) throw new Error("no words in word list");
+
+            fragment.actual = actual;
+            fragment.options = [actual];
+            for(let i = 0; i < 4 && wordListCopy.length != 0; i++) 
+                fragment.options?.push(wordListCopy.pop() as string);
+
+            shuffleList(fragment.options);
         }
     });
 
-    return imageSentence;
+    return prompt;
 }
 
+function randomChoice(list: any[] | undefined) {
+    return list != undefined
+        ? list[Math.floor(Math.random()* list.length)] 
+        : "undefined";
+}
 
+function shuffleList(list: any[]) {
+    return list.sort(() => Math.random() - 0.5);
+}
