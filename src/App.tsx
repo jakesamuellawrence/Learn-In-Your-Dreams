@@ -7,18 +7,13 @@ import HelloState from './components/examples/hello/HelloState';
 import HelloMultiple from './components/examples/hello/HelloMultiple';
 import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
+import ImageGen from './components/replicate_ai/Prompt2Image';
 
 function App() {
   return (
     <div className='container'>
       <Hello name="Jakeyboi" enthusiasmLevel={3} />
-      <HelloClass name='tester' enthusiasmLevel={12} />
-      <HelloState name="jimothy" enthusiasm={5} />
-      <HelloMultiple people={[{id: 0, name: "John"}, {id: 1, name: "Jim"}]} />
-      <hr />
-      <Clock/>
-      <hr />
-      <LoadData />
+      <ImageGen />
     </div>
   );
 }
