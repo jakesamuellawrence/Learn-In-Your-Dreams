@@ -8,24 +8,27 @@ import HelloMultiple from './components/examples/hello/HelloMultiple';
 import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
 import DisplayMessage from './components/longcat/messages';
-import backgroundImage from "./websiteImage.png"
+import backgroundImage from "./resources/images/websiteImage.png"
+import cat from "./resources/images/longcat.png"
+import ad from "./resources/images/ad.png"
+import wordart from "./resources/images/learn.png"
+import purple_background from "./resources/images/purple_background.png"
 
 function App() {
   return (
-    <div className='container'>
-      <img src={backgroundImage} alt="WHY U NO WORK"></img>
-      <Hello name="Jakeyboi" enthusiasmLevel={3} />
-      <HelloClass name='tester' enthusiasmLevel={12} />
-      <HelloState name="jimothy" enthusiasm={5} />
-      <HelloMultiple people={[{id: 0, name: "John"}, {id: 1, name: "Jim"}]} />
-      <hr />
-      <Clock/>
-      <hr />
-      <LoadData />
-      <hr />
-      <DisplayMessage creepinessLevel={10} difficultyLevel={100} correct={true} />
+    <div className='app'>
+      <div className='inner-frame'>
+          <img className="cat" src={cat} alt="NO CAT"></img>
+          <img className="ad" src={ad} alt="NO AD"></img>
+          <img className="wordart" src={wordart} alt="NO WORDART"></img>
+          <div className="box">
+            hello
+          </div>
+      </div>
     </div>
   );
 }
+
+
 
 export default App;
