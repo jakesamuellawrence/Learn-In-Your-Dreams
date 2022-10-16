@@ -6,8 +6,8 @@ import DisplayMessage from "./longcat/messages";
 import ImageGen from "./replicate_ai/Prompt2Img";
 
 function Game() {
-    let [difficulty, setDifficulty] = React.useState(1);
-    let [creepiness, setCreepiness] = React.useState(1);
+    let [difficulty, setDifficulty] = React.useState(0);
+    let [creepiness, setCreepiness] = React.useState(0);
     let [showingResults, setShowResults] = React.useState(true);
     let [results, setResults] = React.useState<boolean[]>([]);
     let [currentPrompt, setCurrentPrompt] = React.useState<Template>();
@@ -57,7 +57,10 @@ function Game() {
             <hr />
             {showingResults && 
                 <DisplayMessage difficultyLevel={difficulty} creepinessLevel={creepiness} 
-                correct={results.every((result) => result)} goNext={goNext} />
+                correct={
+                    difficulty == 0 ? false :
+                    results.every((result) => result)
+                } goNext={goNext} />
             }
         </div>
     );

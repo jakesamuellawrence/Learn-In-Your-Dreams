@@ -65,6 +65,7 @@ function promptDifficultySelection(difficultyLevel: number){
 
 //Outputs the scentence to give to the ai image maker
 export function createImageScentence(difficultyLevel: number) {
+    if (difficultyLevel == 0) difficultyLevel = 1;
     let prompts = promptDifficultySelection(difficultyLevel);
 
     if (!prompts) throw new Error("prompt-list was undefined or null");
