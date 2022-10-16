@@ -17,10 +17,6 @@ function FillBlanks({template, showingResults, submit} : Props) {
         <div>
             <p>
                 {template.fragments.map((fragment) => {
-                    console.log(fragment);
-                    if (fragment instanceof Mask) {
-                        console.log(fragment.options);
-                    }
                     if (fragment instanceof Mask) {
                         if (!fragment.options) throw new Error("fragment word options is undefined");
                         return (
@@ -36,7 +32,6 @@ function FillBlanks({template, showingResults, submit} : Props) {
                             </>
                         )
                     } else {
-                        console.log("not mask: " + fragment); 
                         return <span> {fragment as string} </span>;
                     } 
                 })}
