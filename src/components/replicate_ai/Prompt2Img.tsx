@@ -10,7 +10,7 @@ function ImageGen({imageUrl} : Props) {
             {imageUrl == "" ?
                 <p>Loading...</p>
                 :
-                <img src={imageUrl}/>
+                <img className="prompt-image" src={imageUrl}/>
             }
         </div>
     );

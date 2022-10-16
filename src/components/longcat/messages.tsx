@@ -47,7 +47,7 @@ function DisplayMessage({creepinessLevel, difficultyLevel, correct, goNext} : Pr
     }
     return (
         <div className="message">
-            Slugcat says:
+            The Longcat says:
             <p>Message: {message}</p>
             <button onClick={goNext}>Next</button>
         </div>
