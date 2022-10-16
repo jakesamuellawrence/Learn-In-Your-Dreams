@@ -8,6 +8,7 @@ export enum MaskType {
     PLACE,
     OBJECT,
     ANIMAL,
+    VERB
 }
 
 export function isMaskType(fragment: fragment){

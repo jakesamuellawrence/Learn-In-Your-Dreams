@@ -5,7 +5,7 @@ import {Template} from '../data_models/Template';
 function TestPrompts() {
     return(
     <p>
-        {createImageScentence(1)}
+        {createImageScentence(4,4)}
     </p>)
 }
 
