@@ -22,7 +22,6 @@ function App() {
           <img className="ad" src={ad} alt="NO AD"></img>
           <img className="wordart" src={wordart} alt="NO WORDART"></img>
           <div className="box">
-            hello
             <div className='game-window'>
               <Game/>
             </div>

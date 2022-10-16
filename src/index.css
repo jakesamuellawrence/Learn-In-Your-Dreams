@@ -21,49 +21,44 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100%;
-  aspect-ratio: 4/3;
-  position: relative;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   /* temporary to stop scrolling */
   /* overflow: hidden; */
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 
 .cat{
   position: absolute;
-  height: 115vh;
-  width: 900px;
-  left: 1800px;
-  bottom: 0px;
+  height: 80vh;
+  left: 80vw;
 }
 
 
 .ad{
   position: absolute;
-  height: 25vh;
-  bottom: -100px;
-  right: 320px;
+  width: 60vw;
+  left: 20vw;
+  bottom: -10vh;
+  pointer-events: none;
 }
 
 .wordart{
   position: absolute;
-  height: 30vh;
-  top: -150px;
-  right: 800px;
+  width: 60vw;
+  top: -10vh;
 }
 
 .box{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
-  height: 1500px;
-  width: 1500px;
+  position: absolute;
+  width: 60vw;
+  height: 64vh;
+  top: 22vh;
+  left: 20vw;
   background-color: black;
   color: white;
-  font-size: 80px;
+  overflow: scroll;
 }
