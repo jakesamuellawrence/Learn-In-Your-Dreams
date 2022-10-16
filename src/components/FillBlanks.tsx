@@ -6,10 +6,12 @@ import Dropdown from "./Dropdown";
 
 export interface Props {
     template: Template;
+    showingResults: boolean;
+    submit: (results: boolean[]) => void;
 }
 
-function FillBlanks({template} : Props) {
-    let [shouldShow, setShouldShow] = React.useState(false);
+function FillBlanks({template, showingResults, submit} : Props) {
+    let result : boolean[] = [];
 
     return(
         <div>
@@ -27,8 +29,9 @@ function FillBlanks({template} : Props) {
                                     mask={fragment}
                                     reportState={(value) => {
                                         fragment.setCurrent(value);
+                                        result.push(fragment.isCorrect());
                                     }}
-                                    shouldShow={shouldShow}
+                                    shouldShow={showingResults}
                                 />
                             </>
                         )
@@ -38,7 +41,9 @@ function FillBlanks({template} : Props) {
                     } 
                 })}
             </p>
-            <button onClick={() => setShouldShow(true)}>
+            <button onClick={() => {
+                submit(result);
+            }}>
                 Check
             </button>
         </div>

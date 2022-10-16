@@ -4,10 +4,12 @@ import { MaskType } from "./MaskType";
 export type fragment = string | Mask;
 
 export interface Template {
-    fragments: fragment[]
+    fragments: fragment[];
+    toString: () => string;
 }
 
 function ConstructTemplate(toParse: string) {
+    
     let words = toParse.split(" ");
     let fragments : fragment[] = words.map((word) => {
         if (word.startsWith("[")) {
@@ -17,7 +19,18 @@ function ConstructTemplate(toParse: string) {
         } else return word
     });
     
-    return {fragments: fragments}
+    let template = {fragments: fragments};
+
+    template.toString = () => {
+        let stringList = fragments.map((fragment) => {
+            if (fragment instanceof Mask) {
+                return fragment.actual;
+            } else return fragment as string;
+        });
+        return stringList.join(" ");
+    }
+
+    return template;
 }
 
 export default ConstructTemplate;
