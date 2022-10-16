@@ -11,9 +11,11 @@ class ReplicatePassthroughServer(BaseHTTPRequestHandler):
         content_size = int(self.headers["Content-Length"])
         body = self.rfile.read(content_size)
         body_json = json.loads(body.decode("utf8"))
-        print(body_json)
-        #image_url = get_image(body_json )
-        image_url = "https://miro.medium.com/max/612/1*-yjXo32koJRgQ4alESxNXg.jpeg"
+        prompt = body_json["prompt"]
+        print(prompt)
+        image_url = get_image(prompt)
+        print("Image url format: ", image_url)
+        #image_url = "https://miro.medium.com/max/612/1*-yjXo32koJRgQ4alESxNXg.jpeg"
         self.send_response(200, "ok")
         self.send_header("Access-Control-Allow-Headers", "*")
         self.send_header("Access-Control-Allow-Origin", "http://localhost:3000")

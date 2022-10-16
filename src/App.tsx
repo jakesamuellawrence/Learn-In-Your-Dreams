@@ -7,7 +7,7 @@ import HelloState from './components/examples/hello/HelloState';
 import HelloMultiple from './components/examples/hello/HelloMultiple';
 import Clock from './components/examples/withHooks/Clock';
 import LoadData from './components/examples/withHooks/LoadData';
-import ImageGen from './components/replicate_ai/Prompt2Image';
+import ImageGen from './components/replicate_ai/Textarea2Image';
 
 function App() {
   return (
