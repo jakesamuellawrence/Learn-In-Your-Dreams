@@ -1,6 +1,5 @@
 import { fragment } from "./Template";
 
-
 export enum MaskType {
     NOUN, 
     ADJECTIVE, 
@@ -9,8 +8,4 @@ export enum MaskType {
     OBJECT,
     ANIMAL,
     VERB
-}
-
-export function isMaskType(fragment: fragment){
-    return (Object.values(MaskType).includes(fragment));
 }
