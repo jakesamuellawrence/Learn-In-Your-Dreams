@@ -1,17 +1,13 @@
-import Replicate from "replicate-js"
-
-const replicate = new Replicate({token: "..."});
-
 function ImageGen() {
     let prompt = "Enter a prompt for the AI Image";
     let image = "";
 
     const handlePrompt = async () => {
-        console.log("Initiating model");
-        const aiModel = await replicate.models.get("replicate/hello-world");
-        console.log("Predicting");
-        const generatedImage = await aiModel.predict({text: prompt});
-        image = generatedImage;
+        console.log("Contacting server");
+        await fetch("http://localhost:8080", {method: "POST", headers: {"Access-Control-Allow-Origin": "*"}, body: JSON.stringify({"prompt": prompt})})
+            .then((response) => response.text())
+            .then((text) => image = text);
+        //image = generatedImage;
         console.log(image);
     }
 
