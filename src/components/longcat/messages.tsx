@@ -4,9 +4,10 @@ export interface Props {
     creepinessLevel: number;
     difficultyLevel: number;
     correct: boolean;
+    goNext: () => void;
 }
 
-function DisplayMessage({creepinessLevel, difficultyLevel, correct} : Props) {
+function DisplayMessage({creepinessLevel, difficultyLevel, correct, goNext} : Props) {
     let message  = "";
     if (correct) {
         if (difficultyLevel >= 0 && difficultyLevel < 50) {
@@ -46,9 +47,9 @@ function DisplayMessage({creepinessLevel, difficultyLevel, correct} : Props) {
     }
     return (
         <div className="message">
-            <p>Creepiness: {creepinessLevel}</p>
-            <p>Difficulty: {difficultyLevel}</p>
+            Slugcat says:
             <p>Message: {message}</p>
+            <button onClick={goNext}>Next</button>
         </div>
     )
 

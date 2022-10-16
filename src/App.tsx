@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Hello from './components/examples/hello/Hello';
 import HelloClass from './components/examples/hello/HelloClass';
@@ -13,6 +11,7 @@ import cat from "./resources/images/longcat.png"
 import ad from "./resources/images/ad.png"
 import wordart from "./resources/images/learn.png"
 import purple_background from "./resources/images/purple_background.png"
+import Game from './components/Game';
 
 function App() {
   return (
@@ -23,10 +22,13 @@ function App() {
           <img className="wordart" src={wordart} alt="NO WORDART"></img>
           <div className="box">
             hello
+            <div className='game-window'>
+              <Game/>
+            </div>
           </div>
       </div>
     </div>
-  );
+  )
 }
 
 
