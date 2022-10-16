@@ -58,7 +58,7 @@ function DisplayMessage({difficultyLevel, creepinessLevel, correct, goNext} : Pr
         "What a gifted student! Perhaps you can just graduate? Well let's see how you deal with material from the special classes for gifted students before we let you off.",
         "Amazing. Despite your mistake you're doing great! But are you eligible for graduation straight up? I'd love to keep you here and have one of our researchers work with you? So how about another question?",
         "Still hanging in there? Very impressive! What's going on in that head? Maybe another image will help as spill those juices right out?",
-        "Fascinating. Truly, fascinating. "
+        "Fascinating. Truly, fascinating. I so want to pull off all that organic matter that's preventing me from examining your though processes more closely. But, policy is policy - one final question before I take you on as a personal student. But I do look forward to working on- with you!"
     ]
     ]
 
