@@ -1,24 +1,17 @@
 import React from "react";
 
 export interface Props {
-    prompt: string;
+    imageUrl: string;
 }
 
-async function ImageGen({prompt = ""} : Props) {
-    const [image, setImage] = React.useState("");
-
-    if (prompt != "") {
-        console.log("Contacting server");
-        await fetch("http://localhost:8080", {method: "POST", headers: {"Access-Control-Allow-Origin": "*"}, body: JSON.stringify({"prompt": prompt})})
-            .then((response) => response.text())
-            .then((text) => setImage(text));
-        console.log(prompt);
-        console.log(image);
-    }
-
+function ImageGen({imageUrl} : Props) {
     return (
         <div>
-            <img src={image.toString()}/>
+            {imageUrl == "" ?
+                <p>Loading...</p>
+                :
+                <img src={imageUrl}/>
+            }
         </div>
     );
 }
