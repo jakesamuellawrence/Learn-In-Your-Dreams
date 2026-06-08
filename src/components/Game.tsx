@@ -33,6 +33,7 @@ function Game() {
         setShowResults(false);
         setCurrentPrompt(createImageScentence(difficulty));
         setImageUrl("");
+        setResults([]);
     }
 
     let loadImage = async () => {
@@ -46,6 +47,11 @@ function Game() {
                 });
     }
 
+    let checkCorrect = () => {
+        console.log(results);
+        return results.every((result) => result);
+    }
+
     return (
         <div className='container'>
             {currentPrompt != undefined &&
@@ -57,10 +63,7 @@ function Game() {
             <hr />
             {showingResults && 
                 <DisplayMessage difficultyLevel={difficulty} creepinessLevel={creepiness} 
-                correct={
-                    difficulty == 0 ? false :
-                    results.every((result) => result)
-                } goNext={goNext} />
+                correct={checkCorrect()} goNext={goNext} />
             }
         </div>
     );
